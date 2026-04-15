@@ -1,0 +1,38 @@
+{
+  "name": "project-doc",
+  "version": "1.0.0",
+  "description": "文档归档和任务追踪插件 - 解决项目文档管理混乱问题",
+  "author": "Claude + User",
+  "rules": ["rules/documentation.md", "rules/task-tracking.md", "rules/project-doc-integration.md"],
+  "skills": {
+    "project-init": {
+      "path": "skills/project-init/SKILL.md",
+      "userInvocable": true,
+      "description": "初始化项目文档目录结构"
+    },
+    "requirement-change": {
+      "path": "skills/requirement-change/SKILL.md",
+      "userInvocable": true,
+      "description": "管理需求变更并记录追溯"
+    },
+    "task-update": {
+      "path": "skills/task-update/SKILL.md",
+      "userInvocable": false,
+      "description": "自动更新任务状态（规则驱动）"
+    },
+    "doc-sync": {
+      "path": "skills/doc-sync/SKILL.md",
+      "userInvocable": false,
+      "description": "自动同步文档状态（规则驱动）"
+    }
+  },
+  "templates": [
+    "templates/DOC_INDEX.md",
+    "templates/TASK_TRACKER.md",
+    "templates/CHANGELOG.md",
+    "templates/REQ_template.md",
+    "templates/ARCH_template.md",
+    "templates/TECH_template.md",
+    "templates/MOM_template.md"
+  ]
+}

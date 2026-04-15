@@ -1,9 +1,21 @@
 {
   "name": "project-doc",
-  "version": "1.0.0",
   "description": "文档归档和任务追踪插件 - 解决项目文档管理混乱问题",
-  "author": "Claude + User",
-  "rules": ["rules/documentation.md", "rules/task-tracking.md", "rules/project-doc-integration.md"],
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude + User",
+    "email": "user@example.com"
+  },
+  "keywords": [
+    "documentation",
+    "task-tracking",
+    "project-management"
+  ],
+  "rules": [
+    "rules/documentation.md",
+    "rules/task-tracking.md",
+    "rules/project-doc-integration.md"
+  ],
   "skills": {
     "project-init": {
       "path": "skills/project-init/SKILL.md",

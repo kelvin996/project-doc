@@ -1,0 +1,45 @@
+{
+  "bindings": [
+    {
+      "skill": "project-init",
+      "applies_rules": ["documentation.md"],
+      "outputs_to": ["docs/DOC_INDEX.md", "docs/04-management/TASK_TRACKER.md", "docs/04-management/CHANGELOG.md"],
+      "trigger": "manual",
+      "user_invocable": true,
+      "description": "初始化项目文档目录结构"
+    },
+    {
+      "skill": "requirement-change",
+      "applies_rules": ["documentation.md", "task-tracking.md"],
+      "outputs_to": ["docs/04-management/CHANGELOG.md"],
+      "trigger": "manual",
+      "user_invocable": true,
+      "description": "记录需求变更追溯"
+    },
+    {
+      "skill": "task-update",
+      "applies_rules": ["task-tracking.md", "project-doc-integration.md"],
+      "outputs_to": ["docs/04-management/TASK_TRACKER.md"],
+      "trigger": "lifecycle",
+      "events": ["task-start", "task-complete", "task-block"],
+      "cooldown_seconds": 3,
+      "description": "自动更新任务状态"
+    },
+    {
+      "skill": "doc-sync",
+      "applies_rules": ["documentation.md", "project-doc-integration.md"],
+      "outputs_to": ["docs/DOC_INDEX.md"],
+      "trigger": "file-change",
+      "watch_paths": ["docs/**"],
+      "ignore_patterns": ["*.tmp", ".git/**", "**/CHANGELOG.md"],
+      "cooldown_seconds": 3,
+      "idempotent": true,
+      "description": "自动同步文档索引"
+    }
+  ],
+  "version": "1.0.0",
+  "metadata": {
+    "created_at": "2026-04-30",
+    "author": "Tech Lead"
+  }
+}

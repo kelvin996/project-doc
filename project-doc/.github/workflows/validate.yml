@@ -1,0 +1,40 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run validation
+        run: npm run validate
+
+      - name: Run tests
+        run: npm test
+
+      - name: Check plugin structure
+        run: |
+          echo "Checking plugin structure..."
+          test -f .claude-plugin/plugin.json || exit 1
+          test -f package.json || exit 1
+          test -f LICENSE || exit 1
+          test -f CHANGELOG.md || exit 1
+          test -f README.md || exit 1
+          test -d rules || exit 1
+          test -d skills || exit 1
+          test -d templates || exit 1
+          echo "✅ Structure check passed"

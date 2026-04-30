@@ -1,0 +1,57 @@
+{
+  "trigger_types": {
+    "manual": {
+      "description": "用户显式调用",
+      "invocation": "slash-command",
+      "examples": ["/project-init", "/req-change"],
+      "user_invocable": true
+    },
+    "file-change": {
+      "description": "文件系统监听触发",
+      "implementation": "chokidar",
+      "config": {
+        "persistent": true,
+        "ignoreInitial": true,
+        "awaitWriteFinish": {
+          "stabilityThreshold": 500,
+          "pollInterval": 100
+        }
+      }
+    },
+    "lifecycle": {
+      "description": "项目阶段触发",
+      "events": {
+        "project-init": {
+          "description": "项目初始化时"
+        },
+        "task-start": {
+          "description": "任务开始时",
+          "trigger_condition": "status_change: [ ] → [/]"
+        },
+        "task-complete": {
+          "description": "任务完成时",
+          "trigger_condition": "status_change: [/] → [x]"
+        },
+        "task-block": {
+          "description": "任务阻塞时",
+          "trigger_condition": "status_change: [/] → [!]"
+        },
+        "commit-pre": {
+          "description": "提交前（Git Hook）",
+          "implementation": "husky pre-commit"
+        }
+      }
+    }
+  },
+  "cooldown": {
+    "default_seconds": 3,
+    "max_seconds": 30,
+    "storage": ".claude/cooldown-state.json",
+    "strategy": "per-file"
+  },
+  "version": "1.0.0",
+  "metadata": {
+    "created_at": "2026-04-30",
+    "author": "Tech Lead"
+  }
+}

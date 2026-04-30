@@ -1,0 +1,46 @@
+{
+  "name": "project-doc",
+  "description": "让文档追着代码跑 - Claude Code 项目治理插件",
+  "version": "0.1.0",
+  "author": {
+    "name": "kelvin996",
+    "email": "user@example.com"
+  },
+  "keywords": [
+    "documentation",
+    "task-tracking",
+    "project-management",
+    "ai-workflow",
+    "claude-code"
+  ],
+  "rules": [
+    "rules/documentation.md",
+    "rules/task-tracking.md",
+    "rules/project-doc-integration.md",
+    "rules/write-guard.md"
+  ],
+  "ruleBinding": ".claude-plugin/rule-binding.json",
+  "triggerSpec": ".claude-plugin/trigger-spec.json",
+  "skills": {
+    "project-init": {
+      "path": "skills/project-init/SKILL.md",
+      "userInvocable": true,
+      "trigger": "manual"
+    },
+    "requirement-change": {
+      "path": "skills/requirement-change/SKILL.md",
+      "userInvocable": true,
+      "trigger": "manual"
+    },
+    "task-update": {
+      "path": "skills/task-update/SKILL.md",
+      "userInvocable": false,
+      "trigger": "lifecycle"
+    },
+    "doc-sync": {
+      "path": "skills/doc-sync/SKILL.md",
+      "userInvocable": false,
+      "trigger": "file-change"
+    }
+  }
+}

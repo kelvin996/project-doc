@@ -1,7 +1,6 @@
 ---
 name: task-update
-description: 自动更新任务状态（规则驱动）
-userInvocable: false
+description: Automatically triggered when task status changes are detected - updates TASK_TRACKER.md status indicators ([ ] to [/], [/] to [x], etc.)
 ---
 
 # Task-Update Skill

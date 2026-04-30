@@ -1,7 +1,6 @@
 ---
 name: requirement-change
-description: 管理需求变更并记录追溯
-userInvocable: true
+description: Use when the user asks to "change requirement", "update requirement", "req-change", or needs to track requirement modifications - creates change records in CHANGELOG.md
 ---
 
 # Requirement-Change Skill

@@ -1,7 +1,6 @@
 ---
 name: doc-sync
-description: 自动同步文档状态（规则驱动）
-userInvocable: false
+description: Automatically triggered when documentation changes are detected - syncs DOC_INDEX.md after documents are added or archived
 ---
 
 # Doc-Sync Skill

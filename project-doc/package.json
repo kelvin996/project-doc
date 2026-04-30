@@ -1,0 +1,33 @@
+{
+  "name": "project-doc",
+  "version": "0.1.0",
+  "description": "让文档追着代码跑 - Claude Code 项目治理插件",
+  "main": "runtime/index.js",
+  "scripts": {
+    "test": "jest",
+    "validate": "node scripts/validate.js",
+    "bump": "bash scripts/bump-version.sh"
+  },
+  "keywords": [
+    "claude-code",
+    "documentation",
+    "task-tracking",
+    "project-management",
+    "ai-workflow"
+  ],
+  "author": {
+    "name": "kelvin996",
+    "email": "user@example.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kelvin996/project-doc"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

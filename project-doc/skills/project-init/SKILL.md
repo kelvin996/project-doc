@@ -1,7 +1,6 @@
 ---
 name: project-init
-description: 初始化项目文档目录结构，创建标准归档体系
-userInvocable: true
+description: Use when the user asks to "initialize project docs", "create doc structure", "project-init", or starts a new project - creates standard documentation directory structure with templates
 ---
 
 # Project-Init Skill

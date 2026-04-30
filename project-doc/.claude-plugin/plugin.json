@@ -1,7 +1,7 @@
 {
   "name": "project-doc",
   "description": "让文档追着代码跑 - Claude Code 项目治理插件",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "kelvin996",
     "email": "user@example.com"

@@ -1,0 +1,7 @@
+{
+  "name": "project-doc",
+  "version": "1.0.0",
+  "description": "Documentation automation for Cursor IDE",
+  "rulesPath": ".cursor/rules",
+  "skillsPath": ".cursor/skills"
+}

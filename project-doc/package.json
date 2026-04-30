@@ -1,19 +1,34 @@
 {
-  "name": "project-doc",
-  "version": "0.2.0",
+  "name": "@kelvin996/project-doc",
+  "version": "1.0.0",
   "description": "让文档追着代码跑 - Claude Code 项目治理插件",
   "main": "runtime/index.js",
+  "files": [
+    ".claude-plugin/",
+    "rules/",
+    "skills/",
+    "templates/",
+    "runtime/",
+    "adapters/",
+    "scripts/",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "jest",
     "validate": "node scripts/validate.js",
-    "bump": "bash scripts/bump-version.sh"
+    "bump": "bash scripts/bump-version.sh",
+    "prepublishOnly": "npm run validate && npm test"
   },
   "keywords": [
     "claude-code",
     "documentation",
     "task-tracking",
     "project-management",
-    "ai-workflow"
+    "ai-workflow",
+    "cursor",
+    "opencode",
+    "gemini-cli"
   ],
   "author": {
     "name": "kelvin996",
@@ -24,10 +39,17 @@
     "type": "git",
     "url": "https://github.com/kelvin996/project-doc"
   },
+  "bugs": {
+    "url": "https://github.com/kelvin996/project-doc/issues"
+  },
+  "homepage": "https://github.com/kelvin996/project-doc#readme",
   "devDependencies": {
     "jest": "^29.7.0"
   },
   "engines": {
     "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
